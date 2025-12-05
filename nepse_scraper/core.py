@@ -1,4 +1,3 @@
-# nepse_scraper/core.py
 import logging
 import warnings
 from typing import Any, Dict, Optional
@@ -81,7 +80,7 @@ class NepseAPISession:
             logger.debug(f"Using cached market_open_id: {self._market_open_id}")
             return self._market_open_id
 
-        self._get_access_token() # We need to be authenticated to call this.
+        self._get_access_token()
         logger.debug("Fetching market open ID for payload calculation.")
         endpoint = api_dict['marketopen_api']
         url = ROOT_URL + endpoint['api']

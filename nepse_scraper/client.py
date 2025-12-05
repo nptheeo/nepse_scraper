@@ -1,5 +1,3 @@
-# nepse_scraper/client.py
-
 import logging
 from typing import Any, Dict, List, Optional, Union
 
@@ -34,7 +32,6 @@ class NepseScraper:
             return self._security_map
 
         logger.info("Fetching all security listings to build symbol-to-id map.")
-        ## MODIFIED: Use self.endpoints to respect user customizations.
         endpoint = self.endpoints['security_api']
         response = self.session.get(endpoint['api'])
         securities = response.json()
